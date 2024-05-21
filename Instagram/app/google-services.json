@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "737019269022",
+    "project_id": "socialmedia-38b35",
+    "storage_bucket": "socialmedia-38b35.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:737019269022:android:55a9763ffd5915b471908f",
+        "android_client_info": {
+          "package_name": "com.hcmute.instagram"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4vvdmka8Bg5eh5Xwcq4XBeteOKn7eh7k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

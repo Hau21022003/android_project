@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right">
+            <androidx.cardview.widget.CardView
+                android:layout_marginStart="10dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                app:cardBackgroundColor="#1AA8FF"
+                app:cardCornerRadius="30dp">
+                <ImageView
+                    android:id="@+id/imgFloatingAvatar"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/ic_launcher"/>
+            </androidx.cardview.widget.CardView>
+            <ImageView
+                android:id="@+id/closeFloatingView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_close_24"
+                android:background="#FF3333"
+                android:layout_marginRight="40dp"
+                android:layout_gravity="bottom"
+                android:elevation="10dp"/>
+
+        </FrameLayout>
+
+        <RelativeLayout
+            android:id="@+id/floatingChatLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:layout_marginTop="10dp"
+            android:visibility="gone">
+
+            <android.widget.Toolbar
+                android:theme="@style/Theme.AppCompat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#EFEEEE"
+                android:id="@+id/MessageActivity_bar_layout">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/MessageActivity_toolbar">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/MessageActivity_user_img"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/defualt_insta_pic"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_toEndOf="@+id/MessageActivity_user_img"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="30dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/MessageActivity_fullname"
+                            android:text="Fullname"
+                            android:maxLines="1"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/MessageActivity_userName"
+                            android:text="Username"
+                            android:maxLines="1"/>
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_gravity="end"
+                        android:paddingEnd="30px">
+                        <LinearLayout
+                            android:id="@+id/buttons_layout"
+                            android:paddingVertical="5dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_horizontal"
+                            android:visibility="visible">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_marginEnd="5dp"
+                                android:id="@+id/button_video"
+                                android:layout_width="55dp"
+                                android:layout_height="55dp"
+                                app:cardCornerRadius="32dp"
+                                app:cardBackgroundColor="#1AA8FF">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center">
+                                    <com.zegocloud.uikit.prebuilt.call.invite.widget.ZegoSendCallInvitationButton
+                                        android:id="@+id/video_call_btn"
+                                        android:layout_width="30dp"
+                                        android:layout_height="30dp"
+                                        android:background="#1AA8FF"/>
+                                </LinearLayout>
+
+
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_marginStart="15dp"
+                                android:id="@+id/button_audio"
+                                android:layout_width="55dp"
+                                android:layout_height="55dp"
+                                app:cardBackgroundColor="#1AA8FF"
+                                app:cardCornerRadius="32dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center">
+
+                                    <com.zegocloud.uikit.prebuilt.call.invite.widget.ZegoSendCallInvitationButton
+                                        android:id="@+id/audio_call_btn"
+                                        android:layout_width="30dp"
+                                        android:layout_height="30dp" />
+                                </LinearLayout>
+                            </androidx.cardview.widget.CardView>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                </androidx.appcompat.widget.Toolbar>
+
+            </android.widget.Toolbar>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/MessageActivity_recyclerView"
+                android:layout_above="@+id/MessageActivity_bottom"
+                android:layout_below="@+id/MessageActivity_bar_layout"/>
+
+            <RelativeLayout
+                android:id="@+id/MessageActivity_bottom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/btn_shape_2"
+                android:padding="5dp">
+
+                <EditText
+                    android:id="@+id/MessageActivity_text_send"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_toStartOf="@id/MessageActivity_btn_send"
+                    android:background="@null"
+                    android:hint="Type a message..."
+                    android:inputType="textMultiLine"
+                    android:padding="5dp"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+                <ImageView
+                    android:id="@+id/MessageActivity_likeBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/like_icon"/>
+                <TextView
+                    android:id="@+id/MessageActivity_btn_send"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:padding="10dp"
+                    android:text="Send"
+                    android:textColor="@color/blue_link"
+                    android:visibility="gone"
+                    android:textSize="18sp" />
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+</FrameLayout>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/notify_item_container"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:textAlignment="center"
+    android:paddingHorizontal="10dp"
+    android:paddingVertical="10dp"
+    android:layout_marginBottom="2dp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/like_each_item_user_img"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/defualt_insta_pic"
+        app:civ_border_width="0.5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_gravity="start"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:gravity="center_vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/like_each_item_username"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/like_each_item_comment"
+                    android:maxLines="5"/>
+
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/notify_timestamp"
+                android:text="20s"
+                android:layout_marginHorizontal="5dp"
+                />
+        </LinearLayout>
+
+    <ImageView
+        android:layout_marginStart="10dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/like_each_item_post_image"
+        android:background="@drawable/btn_shape_1"
+        android:layout_alignParentEnd="true"/>
+    <RelativeLayout
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:gravity="end"
+        android:id="@+id/layoutButton"
+        android:layout_gravity="center">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/notify_followBtn"
+            android:background="@drawable/blue_button"
+            android:text="Follow"
+            android:textColor="@color/white"
+            android:textAllCaps="false" />
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/notify_followingBtn"
+            android:background="@drawable/btn_shape_1"
+            android:text="Following"
+            android:visibility="gone"
+
+            android:textAllCaps="false"/>
+
+    </RelativeLayout>
+
+
+</LinearLayout>
